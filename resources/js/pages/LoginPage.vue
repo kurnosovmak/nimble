@@ -24,13 +24,13 @@ export default {
 
         const login = async () => {
             try {
-                const res = await axios.post('http://127.0.0.1:8000/api/login', {
+                const res = await axios.post('/api/login', {
                     email: loginsCr.value.login,
                     password: loginsCr.value.password,
                     token_name: 'WEB',
                 })
                 setAuth( res.data.data.token);
-                window.location = 'http://127.0.0.1:8000/';
+                window.location = '/';
 
             }catch (e){
                 loginsCr.value = {login: '',

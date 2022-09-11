@@ -26,14 +26,14 @@ export default {
 
         const register = async () => {
             try {
-                const res = await axios.post('http://127.0.0.1:8000/api/register', {
+                const res = await axios.post('/api/register', {
                     name: loginsCr.value.name,
                     email: loginsCr.value.login,
                     password: loginsCr.value.password,
                     token_name: 'WEB',
                 });
                 setAuth(res.data.data.token);
-                window.location = 'http://127.0.0.1:8000/';
+                window.location = '/';
 
             } catch (e) {
                 loginsCr.value = {

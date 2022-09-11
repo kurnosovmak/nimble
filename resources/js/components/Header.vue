@@ -3,6 +3,8 @@
         <div v-if="isAuth">
             <span>You link to streaming  - rtmp://89.22.229.228/TestApp/{{ user?.key }}</span>
             <button @click="()=>{clearAuth();}">logout</button>
+
+            <router-link style="color: white" to="/stream/create">Create stream</router-link>
         </div>
         <div v-else >
             <router-link style="color: white;margin-right: 12px" to="/login">Login</router-link>
@@ -25,7 +27,7 @@ export default {
 
         onMounted(async () => {
             if (isAuth) {
-                const rez = await axios.get('http://127.0.0.1:8000/api/user', {
+                const rez = await axios.get('/api/user', {
                     headers: {
                         'Authorization': 'Bearer ' + key.value
                     }

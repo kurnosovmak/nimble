@@ -20,7 +20,7 @@ export default {
         const stream = ref(null);
 
         onMounted(async function () {
-            const res = await axios.get('http://127.0.0.1:8000/api/streams/' + route.params.id);
+            const res = await axios.get('/api/streams/' + route.params.id);
             stream.value = res.data.data
         });
 

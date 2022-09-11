@@ -36,7 +36,7 @@ export default {
             fd.append('description',models.value.description);
             fd.append('image',image.value);
             try {
-                const res = await axios.post('http://127.0.0.1:8000/api/streams', fd,{
+                const res = await axios.post('/api/streams', fd,{
                     headers:{
                         'Authorization': 'Bearer ' + key.value,
                         'Content-Type': 'multipart/form-data'
